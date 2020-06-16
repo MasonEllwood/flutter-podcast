@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:podcast/widgets/general/podcast_header.dart';
+// import 'package:podcast/widgets/general/podcast_header.dart';
 
 class PlaceholderPage extends StatefulWidget {
 
@@ -25,40 +25,87 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Colors.transparent,
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints){
-            return Column(
-              children: <Widget> [
-                PodcastHeader(),
-                Expanded(
-                  child: Container(
-                    color: Colors.pink,
-                  )
-                ),
-              ]
-            );
-          }
-        )
+      appBar: AppBar(
+        // title: Text(
+        //   'mason',
+        //   style: TextStyle(color: Colors.white),
+        // ),
+        leading: GestureDetector(
+          onTap: () {},
+          child: Icon(
+            Icons.navigate_before,
+            size: 28.0,  // add custom icons also
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.menu,
+                size: 26.0,
+              ),
+            )
+          ),
+        ],
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     showDialog(
-      //       context: context,
-      //       builder: (BuildContext context) {
-      //         return SMFRAlertDialog(
-      //           titleText: 'Success!',
-      //           contentText: 'Disposition(s) have been sent out.',
-      //           dismissText: 'Back to Units',
-      //         );   
-      //       }
-      //     );
-      //   },
-      //   child: Icon(Icons.navigation),
-      //   backgroundColor: Colors.green,
-      // ),
+      extendBodyBehindAppBar: true,
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints){
+          return MediaQuery.removePadding(
+            context: context,
+            removeTop: true,
+            child: ListView(
+              children: <Widget>[
+                Stack(
+                  children: <Widget>[
+                    Container(
+                      width: double.infinity,
+                      height: constraints.maxWidth * 1.4,
+                      // height: 585,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/Gary_VEE.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      // child: SafeArea(
+                      //   child: Center(
+                      //     child: Container(
+                      //       width: 300,
+                      //       height: 300,
+                      //       decoration: BoxDecoration(
+                      //       ),
+                      //       child: Center(
+                      //         child: Text(
+                      //           'Stonks',
+                      //         )
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: constraints.maxWidth * 1.4,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/background.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
+
