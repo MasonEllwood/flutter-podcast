@@ -14,7 +14,7 @@ class _PodcastAppState extends State<PodcastApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SingleAuthorPage(),
+      home: PlaceholderPage(),
       onGenerateRoute: _getRoute,  
     );
   }
@@ -22,7 +22,7 @@ class _PodcastAppState extends State<PodcastApp> {
   Route _getRoute(RouteSettings settings) {
     switch (settings.name){
       case '/sinle-author':
-        return _buildRoute(settings, SingleAuthorPage());
+        return _buildRoute(settings, PlaceholderPage());
       default:
         return null;
     }
