@@ -26,15 +26,11 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Text(
-        //   'mason',
-        //   style: TextStyle(color: Colors.white),
-        // ),
         leading: GestureDetector(
           onTap: () {},
           child: Icon(
             Icons.navigate_before,
-            size: 28.0,  // add custom icons also
+            size: 28.0,
           ),
         ),
         actions: <Widget>[
@@ -65,28 +61,12 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
                     Container(
                       width: double.infinity,
                       height: constraints.maxWidth * 1.4,
-                      // height: 585,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/Gary_VEE.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
-                      // child: SafeArea(
-                      //   child: Center(
-                      //     child: Container(
-                      //       width: 300,
-                      //       height: 300,
-                      //       decoration: BoxDecoration(
-                      //       ),
-                      //       child: Center(
-                      //         child: Text(
-                      //           'Stonks',
-                      //         )
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                     ),
                     Container(
                       width: double.infinity,
@@ -96,6 +76,100 @@ class _PlaceholderPageState extends State<PlaceholderPage> {
                           image: AssetImage('assets/images/background.png'),
                           fit: BoxFit.cover,
                         ),
+                      ),
+                    ),
+                    Container(
+                      height: constraints.maxWidth * 1.4,
+                      child: Column(
+                        children: <Widget>[
+                          Spacer(
+                            flex: 4,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Center(
+                              child: Icon(
+                                Icons.play_circle_outline,
+                                size: 140.0, 
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          Spacer(
+                            flex: 1,
+                          ),
+                          Container(
+                            width: constraints.maxHeight * 1.4,
+                            // alignment: Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    '1hr 23m',
+                                    textAlign: TextAlign.left,
+                                    // add font style
+                                  ),
+                                  Text(
+                                    'the\ngaryvee\nshow',
+                                    textAlign: TextAlign.left,
+                                    // add font style
+                                    // style: GMGTextStyles.chunkWhite30px,
+                                  ),
+                                  Text(
+                                    '#PodSessions #Entrepreneurship',
+                                    textAlign: TextAlign.left,
+                                    // add font style
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Spacer(),
+                          Container(
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/images/icon_background_gradient.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            child: Row(
+                              children: <Widget>[
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                    child: Icon(
+                                      Icons.playlist_add,
+                                      size: 25.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                    child: Icon(
+                                      Icons.notifications_active,
+                                      size: 25.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
+                                    child: Icon(
+                                      Icons.share,
+                                      size: 25.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
